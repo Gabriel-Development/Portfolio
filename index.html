@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel BRUN — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <base target="_blank">
+</head>
+
+<body>
+
+  <!-- NOISE OVERLAY -->
+  <div id="noiseOverlay" aria-hidden="true">
+    <svg id="noiseSvg" xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">
+      <defs>
+        <filter id="noiseFilter" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise" />
+          <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise" />
+          <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="blended" />
+          <feComposite in="blended" in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- NAVBAR -->
+  <div id="detailBackdrop" aria-hidden="true"></div>
+
+  <nav id="navbar">
+    <span class="nav-logo">Portfolio</span>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link" target="_self">About</a></li>
+      <li><a href="#experience" class="nav-link" target="_self">Experience</a></li>
+      <li><a href="#projects" class="nav-link" target="_self">Projects</a></li>
+      <li><a href="#contact" class="nav-link" target="_self">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
+  </nav>
+
+  <main>
+
+    <!-- INTERACTIVE HERO -->
+    <section id="hero">
+      <canvas id="particleCanvas"></canvas>
+      <div class="hero-content">
+        <div class="hero-text reveal">
+          <p class="hero-eyebrow">Welcome to my portfolio</p>
+          <h1 class="hero-title">
+            <span class="char">G</span><span class="char">a</span><span class="char">b</span><span class="char">r</span><span class="char">i</span><span class="char">e</span><span class="char">l</span>
+            <span class="char space">&nbsp;</span>
+            <span class="char">B</span><span class="char">r</span><span class="char">u</span><span class="char">n</span>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="eyebrow reveal">Hello, I'm</p>
+            <h1 class="reveal" data-scramble>Gabriel BRUN</h1>
+            <p class="about-bio reveal">
+              I firmly believe that there is no such thing as perfection, therefore I always try to do better knowing that I can improve myself infinitely.
+            </p>
+            <div class="about-details reveal">
+              <div class="detail">
+                <span class="detail-label">Studying in</span>
+                <span class="detail-value">Phnom Penh, Cambodia</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label">Currently</span>
+                <span class="detail-value">10th grade Highschool student</span>
+              </div>
+            </div>
+            <a href="#contact" class="btn magnetic reveal" target="_self">Get in touch</a>
+          </div>
+          <div class="about-photo reveal">
+            <div class="photo-frame">
+              <img src="assets/images/me.jpg" alt="My Photo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-inner">
+        <h2 class="section-title reveal" data-scramble>My Experience</h2>
+
+        <!-- Education -->
+        <div class="experience-category reveal">
+          <h3 class="category-title" data-scramble>Education</h3>
+          <div class="work-list">
+        
+            <div class="work-item reveal expandable" role="button" tabindex="0" aria-expanded="false">
+              <div class="work-meta">
+                <p class="work-date">2013 — Present</p>
+              </div>
+              <div class="work-content">
+                <div class="work-content-header">
+                  <h3 class="work-role">Highschool (Alongside Middle school and Elementary school)</h3>
+                  <span class="expand-indicator" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </div>
+                <span class="work-company">At Lycée Français René Descartes</span>
+                <p class="work-description">
+                  Since my childhood, I have always studied at LFRD. It is a school that teaches the French curriculum but that also has a very lively atmosphere whether it's in or outside of classrooms while keeping respectful behaviors. It is also highly regarded for its academic excellence in Cambodia demonstrating that it is a competitive environment where being at the top of a class isn't easy. 
+                </p>
+                <div class="work-tags">
+                  <span class="tag">GPA: 4.0</span>
+                  <span class="tag">Average in 10th Grade: 18.5/20</span>
+                </div>
+                <div class="performance-note">
+                  <span class="performance-label">Achievements</span>
+                  <p>Continuously placing in the top 10% of my class.</p>
+                  <p>Scoring in the top 5% of the school in the Middle School Exams in 9th Grade and getting the highest possible honors for having an overall average of over 90%.</p>
+                </div>
+              </div>
+              <div class="detail-panel" aria-hidden="true">
+                <div class="detail-panel-inner">
+                  <div class="detail-columns">
+                    <div class="detail-col">
+                      <h4 class="detail-heading">Focus and Competencies</h4>
+                      <p class="detail-text">Studying in a competitive, bilingual environment has sharpened my adaptability, time management, and critical thinking skills. I excel at balancing demanding coursework with independent projects and team collaborations.
+                      By thriving in this environment, I have developed a strong analytical mindset with a particular focus on mathematics, and physics, while keeping and maintaining high academic standards, and still being able to express creativity and passion through extracurriculars and personal projects.
+                      </p>
+                    </div>
+                    <div class="detail-col">
+                      <h4 class="detail-heading">Highlights</h4>
+                      <ul class="detail-list">
+                        <li>Average of 18.5/20 in 10th grade which corresponds to a GPA of 4.0/4.0</li>
+                        <li>Continuously being one of if not the best student in my class</li>
+                        <li>Scoring in the top 5% of the school in the Middle School Exams in 9th Grade and getting the highest possible honors for having an overall average of over 90%.</li>
+                        <li>Successfully navigating the French curriculum while operating smoothly in a multicultural environment and finding cultural identity.</li>
+                        <li>Balancing curriculums with extracurricular commitments, showing time management mastery.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="detail-footer">
+                    <div class="detail-impact">
+                      <span class="detail-impact-label">Clubs & Activities</span>
+                      <p>— Part of the BFI program, an international bacalauréat for french students</p>
+                      <p>— Part of the MUN Workshop team</p>
+                      <p>— Part of my school's Science Club</p>
+                      <p>— Played rugby for more than 10 years as an extracurricular activity</p>
+                      <p>— Future involvment in the Aeronautical Initiation Certificate (Brevet d'Initiation Aéronautique)</p>
+                    </div>
+                    <div class="detail-links">
+                      <a href="https://descartes-cambodge.com/en/" class="detail-link" target="_blank">LFRD →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+
+        <!-- Work & Internships -->
+        <div class="experience-category reveal">
+          <h3 class="category-title" data-scramble>Work & Internships</h3>
+          <div class="work-list">
+
+            <div class="work-item reveal expandable" role="button" tabindex="0" aria-expanded="false">
+              <div class="work-meta">
+                <span class="work-date">2026</span>
+              </div>
+              <div class="work-content">
+                <div class="work-content-header">
+                  <h3 class="work-role">Internship at CamTech University</h3>
+                  <span class="expand-indicator" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </div>
+                <span class="work-company">Cambodia University of Technology and Science</span>
+                <p class="work-description">
+                  Internship where I worked on two distinct projects: making an arduino based Bi-Copter made for stabilisation and the production of a portfolio website (that you are looking at right now). Additionally had to make a report on the internship and a presentation about said internship in order to demonstrate growth.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">Robotics</span>
+                  <span class="tag">Web Development (HTML, CSS, JavaScript)</span>
+                  <span class="tag">Technical/Report Writing</span>
+                </div>
+                <div class="performance-note">
+                  <span class="performance-label">Performance</span>
+                  <p>Succesfully completed both projects in the given timeframe and received positive feedback.</p>
+                </div>
+              </div>
+              <div class="detail-panel" aria-hidden="true">
+                <div class="detail-panel-inner">
+                  <div class="detail-columns">
+                    <div class="detail-col">
+                      <h4 class="detail-heading">What I did</h4>
+                      <p class="detail-text">
+                        During this internship, I worked on my two projects daily in the robotics room, the Bi-Copter and the portfolio website, overcoming various challenges as I progressed on these projects. I had to learn how to use Arduino and its programming language in order to make the Bi-Copter functional and stable. I also had to learn how to use HTML, CSS, and JavaScript in order to make the portfolio website functional and visually appealing. Near the end of my internship, I was writing my report and making a presentation about my internship in order to demonstrate my growth and learning during the internship.
+                        I additionally participated in some of CamTech's classes, particularly on software engineering and robotics where I could observe the functioning of a University class, I participated in corporate meetings where I could observe the way the CamTech team organizes their weekly reports on progress, demonstrating the way a coordinated team works in a professional environment.
+                        
+                      </p>
+                    </div>
+                    <div class="detail-col">
+                      <h4 class="detail-heading">Key achievements</h4>
+                      <ul class="detail-list">
+                        <li>TBD................................................</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="detail-footer">
+                    <div class="detail-impact">
+                      <span class="detail-impact-label">Impact</span>
+                      <p>This internship was a valuable opportunity to apply my academic knowledge in a real-world setting and contribute to meaningful projects and also to learn the operational dynamics of a skilled professional environment through meetings and classes.</p>
+                    </div>
+                    <div class="detail-links">
+                      <a href="https://camtech.edu.kh/" class="detail-link" target="_blank">CamTech University →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item reveal expandable" role="button" tabindex="0" aria-expanded="false">
+              <div class="work-meta">
+                <span class="work-date">2024</span>
+              </div>
+              <div class="work-content">
+                <div class="work-content-header">
+                  <h3 class="work-role">Internship at GERES</h3>
+                  <span class="expand-indicator" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </div>
+                <span class="work-company">GERES</span>
+                <p class="work-description">
+                  GERES is an NGO acting for climate solidarity, notably in the sector of energy efficiency.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">Observer</span>
+                  <span class="tag">Excel Mastery for organization</span>
+                  <span class="tag">Documentation Organization</span>
+                </div>
+                <div class="performance-note">
+                  <span class="performance-label">Performance</span>
+                  <p>Completed the internship smoothly with distinction, receiving positive feedback from supervisors and colleagues.</p>
+                </div>
+              </div>
+              <div class="detail-panel" aria-hidden="true">
+                <div class="detail-panel-inner">
+                  <div class="detail-columns">
+                    <div class="detail-col">
+                      <h4 class="detail-heading">What I did</h4>
+                      <p class="detail-text">During this first internship, I was introduced to the profesional world and environment, assisting to my first corporate meetings and learning how to work in a profesional team.
+                        There I was interacting with the entire team, working together with them and incorporating myself with them. I had multiple tasks which mostly involved enhancing the organization of the NGO. I also participated in field deployments to a textile factory where I was able to observe the operations of the facility and the contribution of the NGO in the means of a corporate meeting.
+                      </p>
+                    </div>
+                    <div class="detail-col">
+                      <h4 class="detail-heading">Key achievements</h4>
+                      <ul class="detail-list">
+                        <li>Positive feedback from supervisors and colleagues</li>
+                        <li>Succesfully impacted the NGO by improving their organizational assets</li>
+                        <li>Recognized for my exceptional attitude during my internship</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="detail-footer">
+                    <div class="detail-impact">
+                      <span class="detail-impact-label">Impact</span>
+                      <p>Thanks to this internship, which was my first interaction with a professional environment, I was able to learn how to work in a professional setting and how to interact with a team of professionals. I was also able to learn how to work in a professional environment and how to interact with a team of professionals.
+                        I was also able to understand the importance of collaboration and communication in a professional setting.
+                        This internship was extremely valuable in shaping my trajectory by providing me with more knowledge of what profesional role I want and don't want to pursue.</p>
+                    </div>
+                    <div class="detail-links">
+                      <a href="https://www.geres.eu/en/our-actions/countries-of-intervention/cambodia/" class="detail-link" target="_blank">GERES →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Commitments -->
+        <div class="experience-category reveal">
+          <h3 class="category-title" data-scramble>Commitments</h3>
+          <div class="work-list">
+
+            <div class="work-item reveal expandable" role="button" tabindex="0" aria-expanded="false">
+              <div class="work-meta">
+                <span class="work-date">2016 — Present</span>
+              </div>
+              <div class="work-content">
+                <div class="work-content-header">
+                  <h3 class="work-role">Athlete — Rugby and other sports</h3>
+                  <span class="expand-indicator" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </div>
+                <span class="work-company">School's Extracurricular Sports Club</span>
+                <p class="work-description">
+                  Constant dedication towards competitive sports, particularly rugby, while balancing academic responsibilities. Served as team captain and vice-captain, leading the team to a podium finish at an Asia-Pacific tournament.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">Team Captain and Vice-Captain</span>
+                  <span class="tag">Podium on an Asian-Pacific tournament</span>
+                </div>
+                <div class="performance-note">
+                  <span class="performance-label">Highlights</span>
+                  <p>Worked alongside the rugby team to lead us to a podium finish at an Asia-Pacific tournament.</p>
+                </div>
+              </div>
+              <div class="detail-panel" aria-hidden="true">
+                <div class="detail-panel-inner">
+                  <div class="detail-columns">
+                    <div class="detail-col">
+                      <h4 class="detail-heading">The commitment</h4>
+                      <p class="detail-text">I've done rugby for more than 10 years now, training 2 times a week (relative to the year and coach), participated in multiple regional and foreign tournaments.
+                        This dedication that I show particularly towards rugby but also for sports in general represents my discipline and [find noun to represent spending time] towards my passion and work.
+                        Rugby is particularly more special because it teaches things that other sports just can't: It teaches humblness because of xxx, it teaches solidarity for when your teamates lose hope, it teaches you xxx.</p>
+                    </div>
+                    <div class="detail-col">
+                      <h4 class="detail-heading">Highlights</h4>
+                      <ul class="detail-list">
+                        <li>Podium finish at Asia-Pacific tournament</li>
+                        <li>Served as Team Captain and Vice-Captain</li>
+                        <li>Balancing sport life with a full academic load</li>
+                        <li>Built resilience, discipline, and team leadership under pressure</li>
+                        <li>Winner of the school Triathlon in the Highschool division in 2026</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="detail-footer">
+                    <div class="detail-impact">
+                      <span class="detail-impact-label">What it taught me</span>
+                      <p>Sports and athletic tournaments teaches you things no classroom can.
+                      <p>I learnt most importantly to accept loss and failure not as an ending but as a stepping stone towards growth and learn from my worst mistakes. I also learnt to be humble by showing empathy and understanding towards teamates and opponents, to be resilient in defeat by always standing back up, stronger than before, to be a leader when needed especially when my team needed disciplining and guidance, to be a team player when needed, to be disciplined in training and on the field, to be focused in competition, to be strategic in play, to be respectful towards opponents and referees, and much more. All of these skills and lessons learnt from sports are applicable to my life and work and I remain grateful for the opportunity to have been able to learn them through sports.</p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item reveal expandable" role="button" tabindex="0" aria-expanded="false">
+              <div class="work-meta">
+                <span class="work-date">2025 — Present</span>
+              </div>
+              <div class="work-content">
+                <div class="work-content-header">
+                  <h3 class="work-role">Model United Nations — Delegate & Workshop Member</h3>
+                  <span class="expand-indicator" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </div>
+                <span class="work-company">MUN Workshop</span>
+                <p class="work-description">
+                  Represented countries in simulated UN committees leading debates and defending my delegation's stance.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">Cooperation and solution finding</span>
+                  <span class="tag">Public Speaking</span>
+                  <span class="tag">Conference Organization with the Workshop</span>
+                </div>
+                <div class="performance-note">
+                  <span class="performance-label">Highlights</span>
+                  <p>Succesfuly convincing all my committees in all conferences to vote for my resolution.</p>
+                  <p>Participated in the succesful completion and organization of a school hosted conference.</p>
+                </div>
+              </div>
+              <div class="detail-panel" aria-hidden="true">
+                <div class="detail-panel-inner">
+                  <div class="detail-columns">
+                    <div class="detail-col">
+                      <h4 class="detail-heading">My role</h4>
+                      <p class="detail-text">I first started as a photographer for my school's conference where I got to implement my amateur skills for photography.
+                        In 9th grade I registered to join the MUN workshop and was selected out of 40 others.
+                        Participated in a multitude of conferences as a delegate reprensenting different countries in high-pressure diplomatic simulations of debates.
+                        After officially being part of my school's MUN Workshop, I joined the finance team in 10th grade where my participation in budget managing lead to a successful conference with a respected budget.
+                      </p>
+                    </div>
+                    <div class="detail-col">
+                      <h4 class="detail-heading">Highlights</h4>
+                      <ul class="detail-list">
+                        <li>Learnt the art of argumentation and negotiation against other eloquent delegates</li>
+                        <li>Trained new delegates in argumentation and negotiation</li>
+                        <li>Represented multiple countries on complex geopolitical issues</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="detail-footer">
+                    <div class="detail-impact">
+                      <span class="detail-impact-label">What it taught me</span>
+                      <p>MUN has taught me to think critically and communicate effectively in high-pressure situations. While I initially struggled with public speaking, I learned to articulate my ideas clearly and persuasively under time constraints and learnt to remain open-minded to different perspectives.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item reveal expandable" role="button" tabindex="0" aria-expanded="false">
+              <div class="work-meta">
+                <span class="work-date">2025 — Present</span>
+              </div>
+              <div class="work-content">
+                <div class="work-content-header">
+                  <h3 class="work-role">Highschool Science Club</h3>
+                  <span class="expand-indicator" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </div>
+                <span class="work-company">Science Club</span>
+                <p class="work-description">
+                  This Science Club is a school club that allows students to explore and experiment with various scientific concepts and phenomena. It provides a platform for students to engage in hands-on learning experiences, fostering curiosity.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">Experimentation</span>
+                  <span class="tag">Scientific Experience</span>
+                  <span class="tag">Cooperation</span>
+                  <span class="tag">Problem Solving</span>
+                  <span class="tag">Project Planning</span>
+                </div>
+                <div class="performance-note">
+                  <span class="performance-label">Highlights</span>
+                  <p>Participated in designing and conducting various science experiments. Participated multiple times in the school's annual Science Fair.</p>
+                </div>
+              </div>
+              <div class="detail-panel" aria-hidden="true">
+                <div class="detail-panel-inner">
+                  <div class="detail-columns">
+                    <div class="detail-col">
+                      <h4 class="detail-heading">The role</h4>
+                      <p class="detail-text">Worked alongside fellow students to succesfuly achieve multiple scientific experiments.</p>
+                      <p class="detail-text">Experiments include: simple chemical reactions, and physics demonstrations. Currently working on a multiyear project for a scaled-down model of different types of renewable energies.</p>
+                    </div>
+                    <div class="detail-col">
+                      <h4 class="detail-heading">Highlights</h4>
+                      <ul class="detail-list">
+                        <li>Designed and conducted various science experiments</li>
+                        <li>Multiple participation in the school's annual Science Fair</li>
+                        <li>Collaborated with peers to achieve successful experimental outcomes</li>
+                        <li>Constant engagement towards projects, demonstrating commitment.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="detail-footer">
+                    <div class="detail-impact">
+                      <span class="detail-impact-label">Impact</span>
+                      <p>Developed further my scientific experimentation planning, and scientific knowledge and skills through hands-on experimentation.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item reveal expandable" role="button" tabindex="0" aria-expanded="false">
+              <div class="work-meta">
+                <span class="work-date">2024 — Present</span>
+              </div>
+              <div class="work-content">
+                <div class="work-content-header">
+                  <h3 class="work-role">Ecological Representative (Eco-Délégué)</h3>
+                  <span class="expand-indicator" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </div>
+                <span class="work-company">Ecologogical Involvment</span>
+                <p class="work-description">
+                  As an Eco-Délégué, I am responsible for promoting and implementing sustainable practices within my school community. This includes organizing events, raising awareness about environmental issues, and collaborating with students and staff to create a more eco-friendly environment.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">Profesional Communication</span>
+                  <span class="tag">Project Management</span>
+                  <span class="tag">Environmental Advocacy</span>
+                </div>
+                <div class="performance-note">
+                  <span class="performance-label">Highlights</span>
+                  <p>Demonstrated strong initiative in promoting environmental sustainability within my school community.</p>
+                </div>
+              </div>
+              <div class="detail-panel" aria-hidden="true">
+                <div class="detail-panel-inner">
+                  <div class="detail-columns">
+                    <div class="detail-col">
+                      <h4 class="detail-heading">The role</h4>
+                      <p class="detail-text">Helping the eco-team achieve many projects for our school's future and ecological involvement such as participating in the school's annual charity fair.
+                      Currently working on removing plastic within the school grounds as a multiple year project.</p>
+                    </div>
+                    <div class="detail-col">
+                      <h4 class="detail-heading">Highlights</h4>
+                      <ul class="detail-list">
+                        <li>Ensuring a safe future for my school</li>
+                        <li>Communication with outside organizations to build partnerships as donors</li>
+                        <li>Participating multiple times in the school's annual charity fair</li>
+                        <li>Participating in the no-plastic campaign project of our school</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="detail-footer">
+                    <div class="detail-impact">
+                      <span class="detail-impact-label">Impact</span>
+                      <p>Opened my eyes further on the importance of climate solidarity and ecological responsibility. Learnt how to effectively communicate and advocate for environmental causes and solidarity.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="experience-category reveal">
+          <h3 class="category-title" data-scramble>Skills</h3>
+          <div class="work-list">
+
+            <div class="work-item reveal">
+              <div class="work-meta">
+                <span class="work-date">Language</span>
+              </div>
+              <div class="work-content">
+                <h3 class="work-role">Verbal Languages</h3>
+                <span class="work-company">Communication</span>
+                <p class="work-description">
+                  Fluent in multiple languages (C1 and above: French, English).
+                  Comfortable having conversations in all listed languages.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">French — Native: C1 or C2</span>
+                  <span class="tag">English — C1 or C2</span>
+                  <span class="tag">Spanish — A2</span>
+                  <span class="tag">Khmer — Native but less experienced: A1</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item reveal">
+              <div class="work-meta">
+                <span class="work-date">Technical</span>
+              </div>
+              <div class="work-content">
+                <h3 class="work-role">Programming & Tools</h3>
+                <span class="work-company">Software Development</span>
+                <p class="work-description">
+                  Software development experience with modern frameworks and programming languages.
+                  Comfortable with the use of Artificial Intelligence tools for productivity and development.
+                </p>
+                <p class="work-description">I have reached quarter-finals of an international programming competition (named "Algoréa") using Python.</p>
+                <p class="work-description">Coded several websites using HTML, CSS, and JavaScript. Some being part of school curriculum, and others for personal projects.</p>
+                <div class="work-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">HTML/CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <!--ONE DAY: <span class="tag">React</span>-->
+                  <!--ONE DAY: <span class="tag">Node.js</span>-->
+                  <!--ONE DAY: <span class="tag">PostgreSQL</span>-->
+                  <!--ONE DAY: <span class="tag">AWS</span>-->
+                  <!--ONE DAY: <span class="tag">Docker</span>-->
+                  <!--ONE DAY: <span class="tag">Git</span>-->
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item reveal">
+              <div class="work-meta">
+                <span class="work-date">Soft Skills</span>
+              </div>
+              <div class="work-content">
+                <h3 class="work-role">Collaboration, Coordination & Organizer</h3>
+                <span class="work-company">Team Dynamics</span>
+                <p class="work-description">
+                  I don't need to have the official title of leader to be the person who keeps the team focused.
+                  Whether it's in competitive sports, MUN debates, or team projects, I am the coordinator and
+                  pace-setter.
+                  This shows my comfort in leading and informal leading while keeping a team focused on a goal.
+                </p>
+                <div class="work-tags">
+                  <span class="tag">Team Leadership</span>
+                  <span class="tag">Communication</span>
+                  <span class="tag">Public Speaking</span>
+                  <span class="tag">Negotiation</span>
+                  <span class="tag">Organization and Team Organization</span>
+                  <span class="tag">Goal Setting</span>
+                  <span class="tag">Mentorship</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-item reveal">
+              <div class="work-meta">
+                <span class="work-date">Amateur Skills</span>
+              </div>
+              <div class="work-content">
+                <h3 class="work-role">Skills built on Hobbies and Passions</h3>
+                <span class="work-company">Versatile skill set</span>
+                <p class="work-description">Amateur photographer with a keen eye for detail and composition. Specialized for natural landscape photography. Participated in multiple photography contests and reached the finals.</p>
+                <p class="work-description">             </p>
+                <div class="work-tags">
+                  <span class="tag">Photography</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-inner">
+        <h2 class="section-title reveal" data-scramble>Projects</h2>
+        <div class="projects-grid">
+
+          <div class="project-card reveal expandable" role="button" tabindex="0" aria-expanded="false">
+            <div class="project-visual carousel" data-carousel="project-1">
+              <div class="carousel-track">
+                <div class="carousel-slide active">
+                  <div class="project-placeholder"><img src="assets/images/portfolio1.png" alt="Dashboard"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/portfolio2.png" alt="Future Details"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/portfolio3.png" alt="Mobile View"></div>
+                </div>
+              </div>
+              <button class="carousel-arrow carousel-prev" aria-label="Previous image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button class="carousel-arrow carousel-next" aria-label="Next image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <div class="carousel-dots">
+                <button class="carousel-dot active" aria-label="Go to image 1"></button>
+                <button class="carousel-dot" aria-label="Go to image 2"></button>
+                <button class="carousel-dot" aria-label="Go to image 3"></button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-info-header">
+                <h3 class="project-name">Portfolio Website Development</h3>
+                <span class="expand-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </div>
+              <p class="project-description">
+                This project was part of my internship at CamTech University but I was planning on developing a portfolio website regardless of the internship.
+                This project involved the development of a personal portfolio website to showcase my skills, experiences, and projects. The website was built using HTML, CSS, and JavaScript, with a focus on responsive design and user experience. It serves as a platform to present my work and achievements in a professional manner.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">AI Mastery for Assistance</span>
+              </div>
+            </div>
+            <div class="detail-panel" aria-hidden="true">
+              <div class="detail-panel-inner">
+                <div class="detail-columns">
+                  <div class="detail-col">
+                    <h4 class="detail-heading">The reason</h4>
+                    <p class="detail-text">This project was under the framework of my internship at CamTech University. 
+                      However, I had planned to develop such a website for future reference and professional use.</p>
+                  </div>
+                  <div class="detail-col">
+                    <h4 class="detail-heading">What I built</h4>
+                    <ul class="detail-list">
+                      <li>Developed a responsive personal portfolio website. Increasing my web development experience.</li>
+                      <li>Implemented a modern UI with smooth animations and transitions</li>
+                      <li>Created a seamless user experience with intuitive navigation</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="detail-footer">
+                  <div class="detail-impact">
+                    <span class="detail-impact-label">Outcome</span>
+                    <p>Received positive feedback from peers and mentors for the design and functionality of the website. The website effectively showcases my skills, experiences, and projects, serving as a professional platform for future opportunities.
+                    </p>
+                  </div>
+                  <div class="detail-links">
+                    <a href="#" class="detail-link" target="_self">Link towards website →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal expandable" role="button" tabindex="0" aria-expanded="false">
+            <div class="project-visual carousel" data-carousel="project-2">
+              <div class="carousel-track">
+                <div class="carousel-slide active">
+                  <div class="project-placeholder"><img src="assets/images/Bi-Copter3.jpg" alt="Finished Product"></div>
+                </div>
+                <div class="carousel-slide">
+                  <video autoplay muted loop playsinline>
+                    <source src="assets/videos/BiCopter-vid.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/Bi-Copter2.jpg" alt="In-Between step"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/Bi-Copter Data.png" alt="After parts arrived"></div>
+                </div>
+              </div>
+              <button class="carousel-arrow carousel-prev" aria-label="Previous image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button class="carousel-arrow carousel-next" aria-label="Next image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <div class="carousel-dots">
+                <button class="carousel-dot active" aria-label="Go to image 1"></button>
+                <button class="carousel-dot" aria-label="Go to image 2"></button>
+                <button class="carousel-dot" aria-label="Go to image 3"></button>
+                <button class="carousel-dot" aria-label="Go to image 4"></button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-info-header">
+                <h3 class="project-name">Arduino based Bi-Copter stabilisation experiment</h3>
+                <span class="expand-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </div>
+              <p class="project-description">
+                This project was part of my internship at CamTech University. The goal was to stabilise a Bi-Copter arm using an Arduino, a gyroscope and motors. The project involved programming the Arduino to read data from the gyroscope and adjust the motors accordingly to maintain stability.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Arduino</span>
+                <span class="tag">Robotics</span>
+                <span class="tag">Problem Solving</span>
+              </div>
+            </div>
+            <div class="detail-panel" aria-hidden="true">
+              <div class="detail-panel-inner">
+                <div class="detail-columns">
+                  <div class="detail-col">
+                    <h4 class="detail-heading">The reason</h4>
+                    <p class="detail-text">This project was under the framework of my internship at CamTech University. It was a valuable experience that allowed me to enhance my knowledge and skills in the field of robotics.</p>
+                  </div>
+                  <div class="detail-col">
+                    <h4 class="detail-heading">What I built</h4>
+                    <ul class="detail-list">
+                      <li>Programmed Arduino to read data from gyroscope</li>
+                      <li>After constant debugging and testing, successfully stabilised the bi-copter arm with a time of about 2 seconds for stabilization.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="detail-footer">
+                  <div class="detail-impact">
+                    <span class="detail-impact-label">Outcome</span>
+                    <p>This experiment and project helped me gain hands-on experience with robotics, especially with arduino. This project also required acute problem solving skills which this project helped me develop even further due to constant needing to fix issues.</p>
+                  </div>
+                  <div class="detail-links">
+                    <a href="https://github.com/eenikov/Arduino-based-bi-copter-experiments" class="detail-link" target="_blank">GitHub Experiment →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal expandable" role="button" tabindex="0" aria-expanded="false">
+            <div class="project-visual carousel" data-carousel="project-3">
+              <div class="carousel-track">
+                <div class="carousel-slide active">
+                  <div class="project-placeholder"><img src="assets/images/Eden-Z-logo.jpg" alt="Logo"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/Eden-Z-1.png" alt="Dashboard"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/Eden-Z-3.png" alt="Calendar Tool"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/Eden-Z-2.png" alt="To-Do Tool"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/Eden-Z-4.png" alt="Notes Tool"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/Eden-Z-5.png" alt="Pomodoro Tool"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/Eden-Z-6.png" alt="Code Sample"></div>
+                </div>
+              </div>
+              <button class="carousel-arrow carousel-prev" aria-label="Previous image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button class="carousel-arrow carousel-next" aria-label="Next image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <div class="carousel-dots">
+                <button class="carousel-dot active" aria-label="Go to image 1"></button>
+                <button class="carousel-dot" aria-label="Go to image 2"></button>
+                <button class="carousel-dot" aria-label="Go to image 3"></button>
+                <button class="carousel-dot" aria-label="Go to image 4"></button>
+                <button class="carousel-dot" aria-label="Go to image 5"></button>
+                <button class="carousel-dot" aria-label="Go to image 6"></button>
+                <button class="carousel-dot" aria-label="Go to image 7"></button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-info-header">
+                <h3 class="project-name">Eden-Z</h3>
+                <span class="expand-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </div>
+              <p class="project-description">
+                This project is an application that I made, with calendar, tasks and notes management to keep the user organized and productive.
+              </p>
+              <div class="project-tags">
+                <span class="tag">JavaScript XML</span>
+                <span class="tag">JSON</span>
+                <span class="tag">CSS</span>
+              </div>
+            </div>
+            <div class="detail-panel" aria-hidden="true">
+              <div class="detail-panel-inner">
+                <div class="detail-columns">
+                  <div class="detail-col">
+                    <h4 class="detail-heading">The reason</h4>
+                    <p class="detail-text">I felt that many people that I know (including me) were lacking of proper organization and time-management tools, and the existing solutions didn't meet my needs for a more efficient and user-friendly experience. So I decided to build my own so that I can customize it to fit my requirements to become both the user and the developer.</p>
+                  </div>
+                  <div class="detail-col">
+                    <h4 class="detail-heading">What I built</h4>
+                    <ul class="detail-list">
+                      <li>An application that regroups calendar, tasks, and notes management alongside other management tools with a user-friendly and cozy interface.</li>
+                      <li>Currently locally-hosted for testing and development purposes, but planning on releasing it when meeting standards.</li>
+                      <li>An application that I made alongside assistance of AI. Code that can be easily maintained.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="detail-footer">
+                  <div class="detail-impact">
+                    <span class="detail-impact-label">Outcome</span>
+                    <p>The project is still in progress but showing promising results. I am currently using it for personal organization despite beta phase and design issues.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal expandable" role="button" tabindex="0" aria-expanded="false">
+            <div class="project-visual carousel" data-carousel="project-1">
+              <div class="carousel-track">
+                <div class="carousel-slide active">
+                  <div class="project-placeholder"><img src="assets/images/ext1.png" alt="Ext1"></div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="project-placeholder"><img src="assets/images/ext2.png" alt="Ext2"></div>
+                </div>
+              </div>
+              <button class="carousel-arrow carousel-prev" aria-label="Previous image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button class="carousel-arrow carousel-next" aria-label="Next image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <div class="carousel-dots">
+                <button class="carousel-dot active" aria-label="Go to image 1"></button>
+                <button class="carousel-dot" aria-label="Go to image 2"></button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-info-header">
+                <h3 class="project-name">Chrome Extension Development</h3>
+                <span class="expand-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </div>
+              <p class="project-description">
+                I made, for now, two locally-hosted Chrome extensions for the pleasure of having and developping them.
+                I simply thought that simple tools were lacking online and I wanted to make them myself somewhere that was easily accessible. 
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">JSON</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">AI Mastery for Assistance</span>
+              </div>
+            </div>
+            <div class="detail-panel" aria-hidden="true">
+              <div class="detail-panel-inner">
+                <div class="detail-columns">
+                  <div class="detail-col">
+                    <h4 class="detail-heading">The reason</h4>
+                    <p class="detail-text">I felt that I was lacking tools during day-to-day tasks. Tools that are so simple but that I did not possess. I therefore decided to make them myself, for fun, since it was a simple task.</p>
+                  </div>
+                  <div class="detail-col">
+                    <h4 class="detail-heading">What I built</h4>
+                    <ul class="detail-list">
+                      <li>Word Counter extension — Counts words, characters and sentences in a full page or in a selected amount of text. Predicts time of reading.</li>
+                      <li>To-Do List extension — the hard part</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="detail-footer">
+                  <div class="detail-impact">
+                    <span class="detail-impact-label">Outcome</span>
+                    <p>It simply provided some functionalities I was missing, improving my workflow and efficiency.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-inner">
+        <h2 class="section-title reveal" data-scramble>Contact</h2>
+        <p class="contact-intro reveal">
+          If you have any questions or remarks, do not hesitate to contact me, it would be my pleasure to answer you!
+        </p>
+        <div class="contact-links reveal">
+          <a href="#" class="btn magnetic email-btn" id="emailBtn">
+            <span class="email-text">gabriel.brun.kh@gmail.com</span>
+            <span class="email-hover">Copy email</span>
+          </a>
+          <a href="https://www.linkedin.com/in/gabriel-brun-6676bb41a/" target="_blank" class="contact-text-link">LinkedIn →</a>
+          <a href="https://github.com/Gabriel-Development" target="_blank" class="contact-text-link">GitHub →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="section-inner">
+      <span>© 2026 Gabriel BRUN.</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
