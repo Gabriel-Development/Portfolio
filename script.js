@@ -347,6 +347,48 @@ const navObserver = new IntersectionObserver((entries) => {
 sections.forEach(section => navObserver.observe(section));
 
 // =============================================
+// MOBILE NAV MENU
+// =============================================
+
+const navHamburger = document.getElementById('navHamburger');
+const navClose = document.getElementById('navClose');
+const navOverlay = document.getElementById('navOverlay');
+const navMenu = document.getElementById('navMenu');
+const navMobileLinks = document.querySelectorAll('.nav-mobile-link');
+
+function openMobileMenu() {
+  if (!navMenu || !navOverlay || !navHamburger) return;
+  navMenu.classList.add('active');
+  navOverlay.classList.add('active');
+  navHamburger.setAttribute('aria-expanded', 'true');
+  navMenu.setAttribute('aria-hidden', 'false');
+  navOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  if (!navMenu || !navOverlay || !navHamburger) return;
+  navMenu.classList.remove('active');
+  navOverlay.classList.remove('active');
+  navHamburger.setAttribute('aria-expanded', 'false');
+  navMenu.setAttribute('aria-hidden', 'true');
+  navOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (navHamburger) navHamburger.addEventListener('click', openMobileMenu);
+if (navClose) navClose.addEventListener('click', closeMobileMenu);
+if (navOverlay) navOverlay.addEventListener('click', closeMobileMenu);
+
+navMobileLinks.forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileMenu();
+});
+
+// =============================================
 // MAGNETIC BUTTON EFFECT
 // =============================================
 
