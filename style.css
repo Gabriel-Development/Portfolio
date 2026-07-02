@@ -1448,11 +1448,19 @@ footer span {
   }
 
   .nav-links {
-    gap: 20px;
+    display: none;
   }
 
   .nav-link {
     font-size: 0.8rem;
+  }
+
+   .nav-hamburger {
+    display: flex;
+  }
+
+  .theme-toggle {
+    margin-right: 8px;
   }
 
   .section-inner {
